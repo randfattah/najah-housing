@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Najah Housing-login </title>
+  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-box">NH</span>
+        <span class="logo-text">Najah Housing</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Explore</a>
+        <a href="#">Map View</a>
+        <a href="#">Favorites</a>
+      </nav>
+    <div class="nav-actions">
+  <span class="icon">🌐</span>
+  <span class="icon">🌙</span>
+  <a href="index1.html" class="login-link active-link">Login</a> 
+  <a href="index.html" class="signup-nav-btn" style="text-decoration: none; color: inherit;">Sign Up</a>
+</div>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="auth-container">
+      <div class="auth-header">
+        <div class="logo-circle">NH</div>
+        <h2>Login</h2>
+        <p class="subtitle">Welcome back to Najah Housing</p>
+      </div>
+
+      <div class="card login-card">
+        <form>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="you@example.com">
+          </div>
+          
+          <div class="form-group">
+            <label>Password</label>
+            <div class="password-wrapper">
+              <input type="password" placeholder="••••••••">
+              <span class="eye-icon">👁️</span>
+            </div>
+          </div>
+
+          <div class="forgot-pass">
+            <a href="#">Forgot Password?</a>
+          </div>
+
+       <button type="submit" class="main-login-btn">Login</button>
+</form>
+
+<!-- 🔥 ADD HERE -->
+<div class="divider">
+  <span>or continue with</span>
+</div>
+
+<div class="social-login">
+  <button class="social-btn facebook">
+    <i class="fab fa-facebook-f"></i> Facebook
+  </button>
+
+  <button class="social-btn twitter">
+    <i class="fab fa-google"></i> google
+  </button>
+</div>
+<!-- 🔥 END -->
+
+<p class="switch-auth">
+  Don't have an account? <a href="index.html">Sign Up</a>
+</p>
+      
+      <p class="demo-note">Demo: use admin@, owner@, or any email</p>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <hr class="footer-divider">
+    <div class="footer-grid">
+      <div class="footer-col brand">
+        <div class="footer-logo">
+          <span class="logo-box small">NH</span>
+          <h3>Najah Housing</h3>
+        </div>
+        <p>Smart housing platform for Nablus city, connecting property seekers with owners.</p>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li>Explore</li>
+          <li>Map View</li>
+          <li>Login</li>
+          <li>Sign Up</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>📍 Nablus, Palestine</p>
+        <p>📧 info@najahhousing.com</p>
+        <p>📞 +970 59 123 4567</p>
+      </div>
+    </div>
+  </footer>
+  <div id="forgotPasswordModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="logo-circle">NH</div>
+        <h2>Reset Password</h2>
+        <p style="color: #64748b; font-size: 14px; margin-bottom: 20px;">
+            Enter your email to receive a reset link
+        </p>
+        <form id="forgotForm">
+            <div class="form-group" style="text-align: left;">
+                <label>Email Address</label>
+                <input type="email" id="resetEmail" placeholder="name@example.com" required>
+            </div>
+            <button type="submit" class="main-login-btn">Send Reset Link</button>
+        </form>
+    </div>
+</div>
+
+
+<script src="script1.js"></script>
+</body>
+</html>

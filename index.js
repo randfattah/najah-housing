@@ -1,1 +1,13 @@
-﻿console.log("Hello, this is a DB Sample");
+﻿const express = require('express');
+const app = express();
+
+ const userRoutes=require('./routes/userRoutes');
+ app.use('/users',userRoutes);
+
+app.get('/', (req, res) => {
+    res.send("hello world");
+});
+
+app.listen(3000, () => {
+    console.log("server is running on port 3000");
+});

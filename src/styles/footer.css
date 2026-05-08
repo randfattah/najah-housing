@@ -1,0 +1,47 @@
+/* =========================
+   FOOTER STYLES
+   ========================= */
+
+.main-footer {
+    padding: 40px 5%;
+    background: #f8fafc;
+    margin-top: auto;
+}
+
+.footer-divider {
+    border: 0;
+    border-top: 1px solid #e2e8f0;
+    margin-bottom: 30px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.footer-col h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.footer-col p,
+.footer-col li {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.logo-box.small {
+    padding: 5px 8px;
+    font-size: 12px;
+}

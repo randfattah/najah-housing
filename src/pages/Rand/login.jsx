@@ -1,46 +1,21 @@
+import { useState } from "react";
 import "../../styles/auth.css";
 import "../../styles/footer.css";
 import "../../styles/navbar.css";
 import Navbar from "../../compenets/Navbar";
 import Footer from "../../compenets/Footer";
+import Forgot from "../../compenets/Forgot";
 
 
 function Login() {
+    const [accountType, setAccountType] = useState("seeker");
+    const [showForgot, setShowForgot] = useState(false);
+
     return (
         <>
-            <header className="navbar">
-                <div className="nav-container">
-
-                    <div className="nav-logo">
-                        <span className="logo-box">NH</span>
-                        <span className="logo-text">Najah Housing</span>
-                    </div>
-
-                    <nav className="nav-links">
-                        <a href="#">Home</a>
-                        <a href="#">Explore</a>
-                        <a href="#">Map View</a>
-                        <a href="#">Favorites</a>
-                    </nav>
-
-                    <div className="nav-actions">
-                        <span className="icon">🌐</span>
-                        <span className="icon">🌙</span>
-
-                        <a href="/login" className="login-link active-link">
-                            Login
-                        </a>
-
-                        <a href="/signup" className="signup-nav-btn">
-                            Sign Up
-                        </a>
-                    </div>
-
-                </div>
-            </header>
+            <Navbar />
 
             <main className="page-content">
-
                 <div className="auth-container">
 
                     <div className="auth-header">
@@ -55,38 +30,57 @@ function Login() {
 
                     <div className="card login-card">
 
-                        <form>
+                        <form onSubmit={e => e.preventDefault()}>
+
+                            <div className="form-group">
+                                <label>Account Type</label>
+
+                                <div className="account-type-toggle">
+                                    <button
+                                        type="button"
+                                        className={accountType === "seeker" ? "active" : ""}
+                                        onClick={() => setAccountType("seeker")}
+                                    >
+                                        Seeker
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        className={accountType === "owner" ? "active" : ""}
+                                        onClick={() => setAccountType("owner")}
+                                    >
+                                        Property Owner
+                                    </button>
+                                </div>
+                            </div>
 
                             <div className="form-group">
                                 <label>Email</label>
-
-                                <input
-                                    type="email"
-                                    placeholder="you@example.com"
-                                />
+                                <input type="email" placeholder="you@example.com" />
                             </div>
 
                             <div className="form-group">
                                 <label>Password</label>
 
                                 <div className="password-wrapper">
-                                    <input
-                                        type="password"
-                                        placeholder="••••••••"
-                                    />
-
+                                    <input type="password" placeholder="••••••••" />
                                     <span className="eye-icon">👁️</span>
                                 </div>
                             </div>
 
                             <div className="forgot-pass">
-                                <a href="#">Forgot Password?</a>
+                                <a
+                                    href="#"
+                                    onClick={e => {
+                                        e.preventDefault();
+                                        setShowForgot(true);
+                                    }}
+                                >
+                                    Forgot Password?
+                                </a>
                             </div>
 
-                            <button
-                                type="submit"
-                                className="main-login-btn"
-                            >
+                            <button type="submit" className="main-login-btn">
                                 Login
                             </button>
 
@@ -97,15 +91,21 @@ function Login() {
                         </div>
 
                         <div className="social-login">
-
-                            <button className="social-btn facebook">
+                            <button
+                                className="social-btn facebook"
+                                type="button"
+                                onClick={() => window.open('https://www.facebook.com/', '_blank')}
+                            >
                                 Facebook
                             </button>
 
-                            <button className="social-btn twitter">
+                            <button
+                                className="social-btn twitter"
+                                type="button"
+                                onClick={() => window.open('https://accounts.google.com/', '_blank')}
+                            >
                                 Google
                             </button>
-
                         </div>
 
                         <p className="switch-auth">
@@ -114,10 +114,14 @@ function Login() {
                         </p>
 
                     </div>
-
                 </div>
-
             </main>
+
+            <Forgot
+                open={showForgot}
+                onClose={() => setShowForgot(false)}
+            />
+
             <Footer />
         </>
     );

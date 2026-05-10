@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "../../styles/auth.css";
 import "../../styles/footer.css";
 import "../../styles/navbar.css";
@@ -5,10 +6,13 @@ import Navbar from "../../compenets/Navbar";
 import Footer from "../../compenets/Footer";
 
 function Signup() {
+    const [accountType, setAccountType] = useState("seeker");
+    const [showForgot, setShowForgot] = useState(false);
+
     return (
         <>
             <Navbar />
-            <div className="signup-page-layout">
+            <main className="page-content">
                 <div className="auth-container">
                     <div className="auth-header">
                         <div className="logo-circle">NH</div>
@@ -20,7 +24,29 @@ function Signup() {
 
                     <div className="card login-card">
 
-                        <form>
+                        <form onSubmit={e => e.preventDefault()}>
+
+                            <div className="form-group">
+                                <label>Account Type</label>
+
+                                <div className="account-type-toggle">
+                                    <button
+                                        type="button"
+                                        className={accountType === "seeker" ? "active" : ""}
+                                        onClick={() => setAccountType("seeker")}
+                                    >
+                                        Seeker
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        className={accountType === "owner" ? "active" : ""}
+                                        onClick={() => setAccountType("owner")}
+                                    >
+                                        Property Owner
+                                    </button>
+                                </div>
+                            </div>
 
                             <div className="form-group">
                                 <label>Full Name</label>
@@ -56,20 +82,25 @@ function Signup() {
                                 Create Account
                             </button>
 
-                           
                         </form>
-
                         <p className="switch-auth">
                             Already have an account?
                             <a href="/login"> Login</a>
                         </p>
-                         <div className="social-login">
-
-                            <button className="social-btn facebook">
+                        <div className="social-login">
+                            <button
+                                className="social-btn facebook"
+                                type="button"
+                                onClick={() => window.open('https://www.facebook.com/', '_blank')}
+                            >
                                 Facebook
                             </button>
 
-                            <button className="social-btn twitter">
+                            <button
+                                className="social-btn twitter"
+                                type="button"
+                                onClick={() => window.open('https://accounts.google.com/', '_blank')}
+                            >
                                 Google
                             </button>
 
@@ -77,7 +108,7 @@ function Signup() {
 
                     </div>
                 </div>
-            </div>
+            </main>
             <Footer />
         </>
     );

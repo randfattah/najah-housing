@@ -68,7 +68,7 @@
     background: white;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     text-align: left;
 }
 
@@ -180,6 +180,10 @@ input:focus {
     background: #1da1f2;
 }
 
+.social-btn.google {
+    background: #ea4335;
+}
+
 /* =========================
    SWITCH LINK
    ========================= */
@@ -194,4 +198,44 @@ input:focus {
     color: #00a896;
     text-decoration: none;
     font-weight: bold;
+}
+
+.account-type-toggle {
+    display: flex !important;
+    gap: 10px !important;
+    margin: 10px 0 20px 0 !important;
+    background: #f6fafd !important;
+    border: 2px solid #16b3b3 !important;
+    border-radius: 12px !important;
+    min-height: 48px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 1000 !important;
+}
+
+.account-type-toggle button {
+    flex: 1;
+    padding: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: #334155;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: none;
+    outline: none;
+    pointer-events: auto;
+    z-index: 1;
+}
+
+.account-type-toggle button:focus {
+    outline: 2px solid #16b3b3;
+}
+
+.account-type-toggle button.active {
+    background: #16b3b3;
+    color: #fff;
+    box-shadow: 0 4px 12px #00a89633;
 }

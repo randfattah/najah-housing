@@ -102,7 +102,7 @@ function Login() {
                             <button
                                 className="social-btn twitter"
                                 type="button"
-                                onClick={() => window.open('https://accounts.google.com/', '_blank')}
+                                onClick={() => window.location.href = 'http://localhost:3000/auth/google'}
                             >
                                 Google
                             </button>
